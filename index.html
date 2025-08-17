@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKf4-d9BAMB0y66NYvNIJXy3ctlQnsI2rDlA&s"
+        type="image/x-icon">
+    <link rel="shortcut icon"
+        href="data:image/png;base64,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"
+        type="image/x-icon">
+    <title>Login | Drive Medical US Site</title>
+</head>
+
+<body>
+
+    <!-- <section class="full-screen-hero">
+        <div class="background-img"></div>
+
+        <div class="content-wrapper">
+
+            <div class="video-wrapper">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://23487842.fs1.hubspotusercontent-na1.net/hubfs/23487842/DmLandingPageThings/air%20cane%20foot%20hightliht%20.411.mp4"
+                        type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="overlay-content">
+                <img class="overlay-logo"
+                    src="https://23487842.fs1.hubspotusercontent-na1.net/hubfs/23487842/DmLandingPageThings/MD_by_Drive_White%201%20(3).svg"
+                    alt="Logo" />
+
+                <div class="onBigScreens">
+                    <p class="overlay-heading-Desktop-one">The Future of Movement</p>
+                    <p class="overlay-heading-Desktop-two">Is About To Land</p>
+                    <p class="overlay-description">Get the first look</p>
+                </div>
+
+                <div class="onSmallScreens">
+                    <p class="overlay-heading">Innovation is in the Air</p>
+                    <p class="overlay-description-mini">Stay a step ahead with early access.</p>
+                </div>
+
+                <a class="overlay-button" href="#hubspot-form">Sign Up Now</a>
+            </div>
+
+            <div class="form-container" id="hubspot-form"></div>
+
+        </div>
+    </section>
+
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+        hbspt.forms.create({
+            region: "na1",
+            portalId: "23487842",
+            formId: "859423f4-9ec7-41ec-8372-d28c0ace3ad2",
+            target: "#hubspot-form"
+        });
+    </script> -->
+
+    <!-- <div style="font-family: Arial, sans-serif; max-width: 100%; margin: auto; padding: 12px; display: flex; flex-direction: column; align-items: center;">
+
+        <div style=" display: flex; align-items: center; justify-content: space-between; width:90%;">
+            <h2 style="color:#0070f3; font-size:23px; font-weight:800; margin:0;">
+                $262.23
+            </h2>
+
+            <span style="color:green; font-weight:800; font-size:17px; display:block; margin-top:4px;">
+                In Stock
+            </span>
+        </div>
+
+
+        
+
+        <p style="margin:12px 0 12px; font-size:13px; color:#333333; width:90%; word-spacing:2px;">
+            Est Delivery Date: <span style="color:#0070f3;">11/10/24</span>
+        </p>
+
+        
+        <div style="display:flex; align-items:center; justify-content: space-between; margin-bottom:15px; width: 89%;">
+
+            
+            <div
+                style="display:flex; align-items:center;justify-content: space-evenly; border:1.5px solid #0070f3; border-radius:6px; padding:8px 28px; gap:15px;">
+                <label style="font-size:14px; font-weight:400; color:#333; white-space:nowrap;">
+                    Quantity:
+                </label>
+                <input type="number" value="1" min="1"
+                    style="width:50px; border:none; font-size:14px; text-align:center; outline:none;" />
+            </div>
+
+            
+            <select
+                style=" padding:9px 32px 9px 8px;  font-size:14px; border:1px solid #ccc; border-radius:6px; background:#fff; cursor:pointer; color:#444444; text-align: center;">
+                <option>1/CS</option>
+                <option>2/CS</option>
+                <option>3/CS</option>
+            </select>
+        </div>
+
+        
+        <button
+            style=" padding:12px; font-size:14px; background-color:#0070f3; color:#fff; border:none; border-radius:20px; cursor:pointer; font-weight:500;width: 90%; word-spacing: 2px;">
+            Add to Cart
+        </button>
+    </div> -->
+
+
+
+
+
+    <!-- <div id="productCard" 
+     style="font-family: Arial, sans-serif; max-width:98%; width:98%; margin:auto; padding:10px; text-align:center; box-sizing:border-box;">
+
+  
+  <div style="position:relative; overflow:hidden; width:100%;">
+
+    
+    <div id="slides" 
+         style="display:flex; transition:transform 0.4s ease; width:100%;">
+
+      
+      <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
+        <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
+          <img src="https://via.placeholder.com/150" 
+               alt="Heel Strap 1" 
+               style="width:100%; border-radius:6px; margin-bottom:10px;">
+          <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 1</h3>
+          <p style="font-size:12px; color:#666; margin:0 0 8px;">Item #STDS831</p>
+          <p style="font-size:16px; font-weight:bold; color:#0070f3; margin:0 0 8px;">$262.23</p>
+          <div style="display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+            <label style="margin-right:5px; font-size:12px; color:#333;">Qty:</label>
+            <input type="number" value="1" min="1" 
+                   style="width:50px; padding:5px; font-size:12px; border:1px solid #ccc; border-radius:4px; text-align:center;">
+          </div>
+          <button style="background:#0070f3; color:#fff; border:none; padding:8px 14px; font-size:13px; border-radius:6px; cursor:pointer;">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      
+      <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
+        <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
+          <img src="https://via.placeholder.com/150" 
+               alt="Heel Strap 2" 
+               style="width:100%; border-radius:6px; margin-bottom:10px;">
+          <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 2</h3>
+          <p style="font-size:12px; color:#666; margin:0 0 8px;">Item #STDS832</p>
+          <p style="font-size:16px; font-weight:bold; color:#0070f3; margin:0 0 8px;">$300.00</p>
+          <div style="display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+            <label style="margin-right:5px; font-size:12px; color:#333;">Qty:</label>
+            <input type="number" value="1" min="1" 
+                   style="width:50px; padding:5px; font-size:12px; border:1px solid #ccc; border-radius:4px; text-align:center;">
+          </div>
+          <button style="background:#0070f3; color:#fff; border:none; padding:8px 14px; font-size:13px; border-radius:6px; cursor:pointer;">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      
+      <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
+        <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
+          <img src="https://via.placeholder.com/150" 
+               alt="Heel Strap 3" 
+               style="width:100%; border-radius:6px; margin-bottom:10px;">
+          <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 3</h3>
+          <p style="font-size:12px; color:#666; margin:0 0 8px;">Item #STDS833</p>
+          <p style="font-size:16px; font-weight:bold; color:#0070f3; margin:0 0 8px;">$199.50</p>
+          <div style="display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+            <label style="margin-right:5px; font-size:12px; color:#333;">Qty:</label>
+            <input type="number" value="1" min="1" 
+                   style="width:50px; padding:5px; font-size:12px; border:1px solid #ccc; border-radius:4px; text-align:center;">
+          </div>
+          <button style="background:#0070f3; color:#fff; border:none; padding:8px 14px; font-size:13px; border-radius:6px; cursor:pointer;">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      
+      <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
+        <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
+          <img src="https://via.placeholder.com/150" 
+               alt="Heel Strap 4" 
+               style="width:100%; border-radius:6px; margin-bottom:10px;">
+          <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 4</h3>
+          <p style="font-size:12px; color:#666; margin:0 0 8px;">Item #STDS834</p>
+          <p style="font-size:16px; font-weight:bold; color:#0070f3; margin:0 0 8px;">$280.00</p>
+          <div style="display:flex; align-items:center; justify-content:center; margin-bottom:10px;">
+            <label style="margin-right:5px; font-size:12px; color:#333;">Qty:</label>
+            <input type="number" value="1" min="1" 
+                   style="width:50px; padding:5px; font-size:12px; border:1px solid #ccc; border-radius:4px; text-align:center;">
+          </div>
+          <button style="background:#0070f3; color:#fff; border:none; padding:8px 14px; font-size:13px; border-radius:6px; cursor:pointer;">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <span id="prev" 
+          style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:22px; font-weight:bold; color:#0070f3; cursor:pointer;">&#10094;</span>
+
+    
+    <span id="next" 
+          style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:22px; font-weight:bold; color:#0070f3; cursor:pointer;">&#10095;</span>
+  </div>
+
+  
+  <div style="margin-top:12px;">
+    <a href="#" style="color:#0070f3; font-size:14px; text-decoration:none;">View All Accessories</a>
+  </div>
+</div>
+
+<script>
+  const slides = document.getElementById("slides");
+  const total = slides.children.length; 
+  let index = 0;
+  const perPage = 2; 
+
+  function showSlide(i) {
+    index = i;
+    if (index < 0) index = 0;
+    if (index > total - perPage) index = total - perPage;
+    slides.style.transform = `translateX(${-index * (100 / perPage)}%)`;
+  }
+
+  document.getElementById("prev").addEventListener("click", () => showSlide(index - perPage));
+  document.getElementById("next").addEventListener("click", () => showSlide(index + perPage));
+
+  showSlide(0);
+</script> -->
+
+
+    <!-- <div style="font-family: Arial, sans-serif;">
+    <div id="carousel" style="display:flex; align-items:center; justify-content:center; max-width:100%; margin:auto;">
+
+
+        <div id="next"
+            style="cursor:pointer; font-size:26px; font-weight:200; color:#0070f3; user-select:none; padding:10px;">
+            &#10094;
+        </div>
+
+
+        <div style="overflow:hidden; width:80%;">
+            <div id="slides" style="display:flex; transition:transform 0.4s ease;">
+
+
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:700; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:6px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="prev"
+            style="cursor:pointer; font-size:26px; font-weight:200; color:#0070f3; user-select:none; padding:10px;">
+            &#10095;
+        </div>
+
+
+    </div>
+    <div style="text-align:center; margin-top:15px;">
+        <a href="#"
+            style="font-size:14px; font-weight:400; color:#0070f3; text-decoration:none;  padding:6px 14px; border-radius:20px; display:inline-block; transition:all 0.3s;">
+            View All Accessories
+        </a>
+    </div>
+    </div>
+
+    <script>
+        const slides = document.getElementById("slides");
+        const total = slides.children.length;
+        let index = 0;
+
+        function showSlide(i) {
+            index = i;
+            if (index < 0) index = 0;
+            if (index > total - 2) index = total - 2;
+            slides.style.transform = `translateX(${-index * 50}%)`;
+        }
+
+        document.getElementById("prev").addEventListener("click", () => showSlide(index - 2));
+        document.getElementById("next").addEventListener("click", () => showSlide(index + 2));
+
+        showSlide(0); 
+    </script> -->
+
+
+
+
+    <!-- chair shift -->
+    <!-- <div id="productCard"
+        style="font-family: Arial, sans-serif; max-width:260px; margin:auto;  text-align:center;  box-sizing:border-box;">
+
+         -->
+    <!-- <h3 style="font-size:22px; margin: 5px 0; font-weight:700; color:#333333;  line-height:1.2;display: flex;letter-spacing: 1px;">
+            Silver Sport 2 <br /> Wheelchair
+        </h3> -->
+
+
+    <!-- <div id="slider"
+            style="position:relative; overflow:hidden; width:100%; height:280px; border-radius:6px; margin-bottom:12px; cursor:grab; ">
+            <div id="slides" style="display:flex; transition:transform 0.3s ease;width: 100%; height: 100%;">
+                <img src="./img/chairFour.jpg" style="min-width:100%; height:100%; object-fit:contain;">
+                <img src="./img/chairOne.png" style="min-width:100%; height:100%; object-fit:contain;">
+                <img src="./img/chairThree.jpeg" style="min-width:100%; height:100%; object-fit:contain;">
+                <img src="./img/chairTwo.png" style="min-width:100%; height:100%; object-fit:contain;">
+                <img src="./img/chairFive.jpg" style="min-width:100%; height:100%; object-fit:contain;">
+            </div>
+        </div> -->
+
+
+    <!-- <div id="dots" style="display:flex; justify-content:center; gap:12px; ">
+            <span
+                style="width:8px; height:8px; border-radius:50%; background:#333; display:inline-block; cursor:pointer;"></span>
+            <span
+                style="width:8px; height:8px; border-radius:50%; background:#ccc; display:inline-block; cursor:pointer;"></span>
+            <span
+                style="width:8px; height:8px; border-radius:50%; background:#ccc; display:inline-block; cursor:pointer;"></span>
+            <span
+                style="width:8px; height:8px; border-radius:50%; background:#ccc; display:inline-block; cursor:pointer;"></span>
+            <span
+                style="width:8px; height:8px; border-radius:50%; background:#ccc; display:inline-block; cursor:pointer;"></span>
+        </div> -->
+    <!-- <div id="productCard"
+        style="font-family: Arial, sans-serif; max-width:260px; margin:auto;  text-align:center;  box-sizing:border-box;">
+
+        
+        
+        <h2 style="color:#0070f3; font: size 22px; display: flex; font-weight:800; margin: 5px 0; width: 90%;">
+            $262.23
+        </h2>
+
+        
+
+        
+        <div style=" display:flex;align-items: center; justify-content:space-between;  font-size:18px; color:#555;padding: 0 5px;">
+            <p style="font-size:17px; color:#555; margin:0;word-spacing: 2px; letter-spacing: 0.5px;">Item # <span style="color:#333;">SSP218DDA-ELR</span></p>
+            <div style="display: flex; align-items: center; justify-content: stretch; gap:10px;"><span style="cursor:pointer; font-size: 30px;">♡</span>
+                <span style="cursor:pointer; font-size: 22px;">🔗</span>
+            </div>
+        </div>
+        <div style="padding:5px 5px; display:flex; align-items: center; justify-content: space-between;">
+            <p style="font-size:17px; color:#555; margin:0;word-spacing: 2px;letter-spacing: 0.5px;">UPC <span style="color:#333;"># 822383140414</span></p>
+            <p style="font-size:17px; color:#555; margin:0;word-spacing: 2px; letter-spacing: 1px;">HCPCS <span style="color:#333;">E4002</span></p>
+        </div>
+    </div> -->
+
+    <!-- <script>
+        
+        const card = document.getElementById("productCard");
+        if (window.innerWidth <= 480) {
+            card.style.maxWidth = "98%";
+            card.style.width = "98%";
+            card.style.padding = "10px";
+        }
+
+        
+        const slides = document.getElementById("slides");
+        const dots = document.querySelectorAll("#dots span");
+        const total = dots.length;
+        let index = Math.floor(total / 2);
+        let startX = 0;
+        let isDragging = false;
+        let currentTranslate = -index * 100;
+        let prevTranslate = currentTranslate;
+
+        
+        function updateDots() {
+            const maxScale = 1.5; 
+            const minScale = 0.6; 
+            dots.forEach((dot, i) => {
+                const distance = Math.abs(index - i);
+                let scale = maxScale - distance * 0.3;
+                if (scale < minScale) scale = minScale;
+                dot.style.transform = `scale(${scale})`;
+                dot.style.background = i === index ? "#333" : "#ccc";
+            });
+        }
+
+        function showSlide(i) {
+            index = i;
+            currentTranslate = -i * 100;
+            prevTranslate = currentTranslate;
+            slides.style.transition = "transform 0.3s ease";
+            slides.style.transform = `translateX(${currentTranslate}%)`;
+            updateDots();
+        }
+
+        showSlide(index);
+
+        
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => showSlide(i));
+        });
+
+        
+        slides.addEventListener("mousedown", dragStart);
+        slides.addEventListener("mouseup", dragEnd);
+        slides.addEventListener("mouseleave", dragEnd);
+        slides.addEventListener("mousemove", dragAction);
+
+        slides.addEventListener("touchstart", dragStart);
+        slides.addEventListener("touchend", dragEnd);
+        slides.addEventListener("touchmove", dragAction);
+
+        function dragStart(e) {
+            isDragging = true;
+            slides.style.transition = "none";
+            startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+        }
+
+        function dragAction(e) {
+            if (!isDragging) return;
+            const currentX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+            const diff = ((currentX - startX) / slides.offsetWidth) * 100;
+            slides.style.transform = `translateX(${prevTranslate + diff}%)`;
+        }
+
+        function dragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            const endX = e.type.includes("mouse") ? e.pageX : e.changedTouches[0].clientX;
+            const diff = endX - startX;
+
+            if (diff > 50 && index > 0) index--;
+            else if (diff < -50 && index < total - 1) index++;
+
+            showSlide(index);
+        }
+    </script> -->
+
+
+
+
+
+
+
+    <!-- this new -->
+    <!-- <div id="productCard"
+    style="font-family: Arial, sans-serif; max-width:260px; margin:auto; text-align:center; box-sizing:border-box;">
+
+    
+    <h3 id="titleText"
+        style="font-size:22px; margin: 5px 0; font-weight:700; color:#333333; line-height:1.2; display: flex; letter-spacing: 1px; justify-content:center;">
+        Silver Sport 2 <br /> Wheelchair
+    </h3>
+
+    
+    <div class="productLayout" 
+     style="display:flex; flex:1.8; gap:20px;">
+  
+  <div class="leftImages" 
+       style="display:flex; flex-direction:column; gap:10px;">
+    
+    <div class="sideThumbnails" 
+         style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+      
+      <i id="arrowUp" 
+         class="arrowSizing fa-solid fa-angle-up" 
+         style="font-size:20px; margin:8px 0; cursor:pointer; color:#007bff; display:flex; align-items:center;"></i>
+
+      <div class="thumbnailsView">
+        <img src="./img/chairFour.jpg" data-src="./img/chairFour.jpg" 
+             class="thumbnailImage" 
+             style="width:70px; height:60px; object-fit:contain; border:2px solid transparent; cursor:pointer; transition:border-color 0.2s ease-in-out; border-radius:5px;" />
+        
+        <img src="./img/chairOne.png" data-src="./img/chairOne.png" 
+             class="thumbnailImage" 
+             style="width:70px; height:60px; object-fit:contain; border:2px solid transparent; cursor:pointer; transition:border-color 0.2s ease-in-out; border-radius:5px;" />
+        
+        <img src="./img/chairTwo.png" data-src="./img/chairTwo.png" 
+             class="thumbnailImage" 
+             style="width:70px; height:60px; object-fit:contain; border:2px solid transparent; cursor:pointer; transition:border-color 0.2s ease-in-out; border-radius:5px;" />
+        
+        <img src="./img/chairThree.jpeg" data-src="./img/chairThree.jpeg" 
+             class="thumbnailImage activeThumbnail" 
+             style="width:70px; height:60px; object-fit:contain; border:2px solid skyblue; cursor:pointer; transition:border-color 0.2s ease-in-out; border-radius:5px;" />
+      </div>
+
+      <i id="arrowDown" 
+         class="arrowSizing fa-solid fa-angle-down" 
+         style="font-size:20px; margin:8px 0; cursor:pointer; color:#007bff; display:flex; align-items:center;"></i>
+    </div>
+  </div>
+
+  <div class="mainProductImg" 
+       style="position:relative; overflow:hidden; width:100%; max-width:500px; margin-top:60px; display:flex; flex-direction:column; gap:5px; align-items:center;">
+    
+    <img id="mainProductImage" 
+         src="./img/chairThree.jpeg" alt="main product" 
+         style="width:100%; height:auto; transition:transform 0.3s ease-in-out;" 
+         onmouseover="this.style.transform='scale(1.1)';" 
+         onmouseout="this.style.transform='scale(1)';" />
+    
+    <p class="zoomText" 
+       style="text-align:center; font-size:14px; color:#666; margin-top:8px;">
+       Roll over image to zoom in
+    </p>
+  </div>
+</div>
+
+
+    
+    <h2 id="priceText" style="color:#0070f3; font-size:22px; display: flex; justify-content:center; font-weight:800; margin: 5px 0;">
+        $262.23
+    </h2>
+
+    
+    <div id="infoRow1"
+        style="display:flex;align-items: center; justify-content:space-between; font-size:18px; color:#555; padding: 0 5px;">
+        <p id="itemText"
+            style="font-size:17px; color:#555; margin:0; word-spacing: 2px; letter-spacing: 0.5px;">Item #
+            <span style="color:#333;">SSP218DDA-ELR</span>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: stretch; gap:10px;">
+            <span style="cursor:pointer; font-size: 30px;">♡</span>
+            <span style="cursor:pointer; font-size: 22px;">🔗</span>
+        </div>
+    </div>
+
+    <div id="infoRow2"
+        style="padding:5px 5px; display:flex; align-items: center; justify-content: space-between;">
+        <p id="upcText"
+            style="font-size:17px; color:#555; margin:0; word-spacing: 2px; letter-spacing: 0.5px;">UPC
+            <span style="color:#333;"># 822383140414</span>
+        </p>
+        <p id="hcpcsText"
+            style="font-size:17px; color:#555; margin:0; word-spacing: 2px; letter-spacing: 1px;">HCPCS
+            <span style="color:#333;">E4002</span>
+        </p>
+    </div>
+</div>
+
+<script>document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.getElementById("mainProductImage");
+  const thumbnails = document.querySelectorAll(".thumbnailImage");
+  const arrowUp = document.getElementById("arrowUp");
+  const arrowDown = document.getElementById("arrowDown");
+
+  let currentIndex = 0;
+
+  
+  function updateMainImage(index) {
+    if (thumbnails[index]) {
+      mainImage.src = thumbnails[index].dataset.src || thumbnails[index].src;
+      thumbnails.forEach(t => t.classList.remove("activeThumbnail"));
+      thumbnails[index].classList.add("activeThumbnail");
+      currentIndex = index;
+    }
+  }
+
+  
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      updateMainImage(index);
+    });
+  });
+
+  
+  arrowUp?.addEventListener("click", () => {
+    if (currentIndex > 0) updateMainImage(currentIndex - 1);
+  });
+
+  
+  arrowDown?.addEventListener("click", () => {
+    if (currentIndex < thumbnails.length - 1) updateMainImage(currentIndex + 1);
+  });
+
+ 
+  updateMainImage(currentIndex);
+});
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="productCard" 
+     style="font-family: Arial, sans-serif; max-width:260px; margin:auto; padding:12px; text-align:center; border:1px solid #eee; border-radius:8px; box-sizing:border-box;">
+
+  
+  <h3 style="font-size:16px; font-weight:bold; color:#333; margin:0 0 10px; line-height:1.2;">
+    Silver Sport 2 <br> Wheelchair
+  </h3>
+
+  
+  <div style="position:relative; width:100%; height:auto; margin-bottom:12px;">
+    <img id="mainProductImage" 
+         src="./img/chairFour.jpg" 
+         style="width:100%; max-width:240px; border-radius:6px; border:1px solid #ddd;"/>
+  </div>
+
+  
+  <div style="display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:14px;">
+    
+    
+    <span id="arrowLeft" style="cursor:pointer; font-size:22px; color:#0070f3;">&#8249;</span>
+    
+    
+    <div style="display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;">
+      <img class="thumbnailImage activeThumbnail" 
+           src="./img/chairFour.jpg" 
+           data-src="https://via.placeholder.com/240x200.png?text=Main+Image+1"
+           style="width:55px; height:50px; border:1px solid #ccc; border-radius:4px; cursor:pointer;"/>
+      <img class="thumbnailImage" 
+           src="./img/chairOne.png" 
+           data-src="https://via.placeholder.com/240x200.png?text=Main+Image+2"
+           style="width:55px; height:50px; border:1px solid #ccc; border-radius:4px; cursor:pointer;"/>
+      <img class="thumbnailImage" 
+           src="./img/chairThree.jpeg" 
+           data-src="https://via.placeholder.com/240x200.png?text=Main+Image+3"
+           style="width:55px; height:50px; border:1px solid #ccc; border-radius:4px; cursor:pointer;"/>
+    </div>
+
+    
+    <span id="arrowRight" style="cursor:pointer; font-size:22px; color:#0070f3;">&#8250;</span>
+  </div>
+
+  
+  <div style="font-size:20px; font-weight:800; color:#0070f3; margin-bottom:10px;">
+    $262.23
+  </div>
+
+  
+  <p style="font-size:13px; color:#555; margin:3px 0;">Item # SSP218DDA-ELR</p>
+  <p style="font-size:13px; color:#555; margin:3px 0;">UPC # 822383140414</p>
+  <p style="font-size:13px; color:#555; margin:3px 0;">HCPCS # E4002</p>
+
+  
+  <div style="margin-top:8px; display:flex; justify-content:center; gap:16px; font-size:18px; color:#333;">
+    <span style="cursor:pointer;">&#9825;</span> 
+    <span style="cursor:pointer;">&#128257;</span> 
+  </div>
+</div> -->
+
+    <!-- <script>
+  
+  const thumbnails = document.querySelectorAll(".thumbnailImage");
+  const mainImage = document.getElementById("mainProductImage");
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener("click", () => {
+      mainImage.setAttribute("src", thumbnail.getAttribute("data-src"));
+      thumbnails.forEach(img => img.style.border="1px solid #ccc");
+      thumbnail.style.border="2px solid #0070f3";
+    });
+  });
+
+  
+  const arrowLeft = document.getElementById("arrowLeft");
+  const arrowRight = document.getElementById("arrowRight");
+  const thumbContainer = arrowLeft.nextElementSibling;
+
+  arrowLeft.addEventListener("click", () => {
+    thumbContainer.scrollBy({ left: -70, behavior: "smooth" });
+  });
+
+  arrowRight.addEventListener("click", () => {
+    thumbContainer.scrollBy({ left: 70, behavior: "smooth" });
+  });
+
+  
+  function responsiveCard() {
+    const card = document.getElementById("productCard");
+    if (window.innerWidth <= 480) {
+      card.style.maxWidth = "90%";
+      card.style.padding = "10px";
+    } else {
+      card.style.maxWidth = "260px";
+    }
+  }
+
+  window.addEventListener("resize", responsiveCard);
+  responsiveCard();
+</script> -->
+
+
+
+    <!-- <div>
+    <div style="font-size:20px; font-weight:800; color:#0070f3; margin-bottom:10px;">
+    $262.23
+  </div>
+
+  
+  <p style="font-size:13px; color:#555; margin:3px 0;">Item # SSP218DDA-ELR</p>
+  <p style="font-size:13px; color:#555; margin:3px 0;">UPC # 822383140414</p>
+  <p style="font-size:13px; color:#555; margin:3px 0;">HCPCS # E4002</p>
+
+  
+  <div style="margin-top:8px; display:flex; justify-content:center; gap:16px; font-size:18px; color:#333;">
+    <span style="cursor:pointer;">&#9825;</span> 
+    <span style="cursor:pointer;">&#128257;</span> 
+  </div>
+</div> -->
+
+
+
+<!-- 
+    <div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
+
+        
+        <div style="margin-bottom:20px;">
+            <label for="color" style="display:block; font-weight:bold; margin-bottom:8px;">Color</label>
+            <select id="color" style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF;">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="black">Black</option>
+            </select>
+        </div>
+
+        
+        <div style="margin-bottom:20px;">
+            <label for="seat" style="display:block; font-weight:bold; margin-bottom:8px;">Seat Size</label>
+            <select id="seat" style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF;">
+                <option value="16">16”</option>
+                <option value="18" selected>18”</option>
+                <option value="20">20”</option>
+            </select>
+        </div>
+
+        
+        <div style="margin-bottom:20px;">
+            <label for="arm" style="display:block; font-weight:bold; margin-bottom:8px;">Arm Style</label>
+            <select id="arm" style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF;">
+                <option value="desk" selected>Desk</option>
+                <option value="full">Full</option>
+            </select>
+        </div>
+
+        
+        <div style="margin-bottom:20px;">
+            <label for="rigging" style="display:block; font-weight:bold; margin-bottom:8px;">Front Rigging</label>
+            <select id="rigging" style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF;">
+                <option value="footrests">Footrests</option>
+                <option value="legrests" selected>Legrests</option>
+            </select>
+        </div>
+
+    </div> -->
+<div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
+
+    <!-- Color -->
+    <div style="margin-bottom:20px; position:relative;">
+        <label style="display:block; font-weight:bold; margin-bottom:8px;">Color</label>
+        <div style="width:100%; position:relative;">
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Color</button>
+            <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Red</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Blue</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Black</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Seat Size -->
+    <div style="margin-bottom:20px; position:relative;">
+        <label style="display:block; font-weight:bold; margin-bottom:8px;">Seat Size</label>
+        <div style="width:100%; position:relative;">
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Seat Size</button>
+            <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">16”</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">18”</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">20”</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Arm Style -->
+    <div style="margin-bottom:20px; position:relative;">
+        <label style="display:block; font-weight:bold; margin-bottom:8px;">Arm Style</label>
+        <div style="width:100%; position:relative;">
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Arm Style</button>
+            <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Desk</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Full</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Front Rigging -->
+    <div style="margin-bottom:20px; position:relative;">
+        <label style="display:block; font-weight:bold; margin-bottom:8px;">Front Rigging</label>
+        <div style="width:100%; position:relative;">
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Front Rigging</button>
+            <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Footrests</li>
+                <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Legrests</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleDropdown(btn) {
+    const ul = btn.nextElementSibling;
+    // Close other dropdowns
+    document.querySelectorAll('ul').forEach(menu => {
+        if(menu !== ul) menu.style.display = 'none';
+    });
+    ul.style.display = ul.style.display === 'block' ? 'none' : 'block';
+}
+
+function selectOption(li) {
+    const btn = li.parentElement.previousElementSibling;
+    btn.textContent = li.textContent;
+    li.parentElement.style.display = 'none';
+}
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

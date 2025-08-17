@@ -1,0 +1,404 @@
+/* #raju{
+    color: gray !important;
+} */
+ 
+html {
+  scroll-behavior: smooth;
+}
+.full-screen-hero {
+  position: relative;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #000;
+  overflow-x: hidden;
+/*   border: 2px solid red; */
+  overflow: hidden;
+}
+
+/* Background Image */
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-image: url('https://23487842.fs1.hubspotusercontent-na1.net/hubfs/23487842/DmLandingPageThings/Rectangle%201.svg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+/*   border:2px solid red; */
+}
+
+
+.video-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top:-20px;
+}
+/* Content wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+/*   border:2px solid red; */
+}
+
+.hero-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-width: none;
+  z-index: 10;
+}
+
+/* Overlay Content */
+/* Overlay Content */
+.overlay-content {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 20;
+  text-align: left;
+/*   border:2px solid red; */
+}
+
+/* Logo */
+.overlay-logo {
+  max-width: 282px;
+  max-height: 90px;
+  margin-bottom: 10px;
+/*   border:2px solid red; */
+}
+
+/* Heading */
+.onBigScreens {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+/*   border:2px solid gray; */
+}
+
+
+
+.overlay-heading-Desktop-one {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 5vw, 48px);
+  font-weight: 700;
+  color: #FFFFFF;
+  max-width: 95vw;
+/*   padding: 6px 0px; */
+  letter-spacing: 1px;
+  transform: scaleX(1);
+/*   border:2px solid red; */
+  padding:-30px 0px;
+}
+.overlay-heading-Desktop-two {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 5vw, 48px);
+  font-weight: 700;
+  color: #FFFFFF;
+  max-width: 95vw;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+/*   border:2px solid red; */
+  padding:-30px 0px;
+/*   padding-left:-160px; */
+   transform: scaleX(1);
+/*   margin-left: 0; */
+  margin-top: -30px;
+/*   padding:-20px 0px; */
+  
+}
+  
+/* Description */
+.overlay-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  font-weight: 600;
+  color: #FFFFFF;
+  max-width: 90vw;
+  padding-bottom: 30px;
+  margin-top: -20px;
+/*   border:2px solid red; */
+}
+.overlay-description-mini{
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  font-weight: 600;
+  color: #FFFFFF;
+  max-width: 90vw;
+  padding-bottom: 30px;
+  margin-top: -10px;
+}
+/* Button */
+.overlay-button {
+  width: clamp(120px, 20vw, 170px);
+  height: clamp(32px, 6vw, 38px);
+  font-size: clamp(13px, 2.2vw, 16px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 40px;
+  background-color: #D9B55C;
+  color: #282828;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  margin-top: -35px;
+  margin-left:20px;
+/*   border:2px solid green !important; */
+}
+.overlay-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.overlay-button:hover {
+  background-color: #D9B55C; /* same as normal */
+  color: #282828;            /* same as normal */
+  text-decoration: none;     /* remove underline */
+}
+
+.full-screen-hero form.hs-form input.hs-button.primary:hover {
+  background-color: #D9B55C;
+  color: #282828;
+}
+
+/* HubSpot Form */
+.form-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 600px;
+  margin-top: -50px;
+margin-right: auto;
+margin-bottom: 60px;
+margin-left: auto;
+/*   padding: 45px; */
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 95px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+/*   border:2px solid red; */
+}
+/* .hs-button.primary {
+  margin-left: -40px; adjust the value as needed
+  border:2px solid red;
+} */
+.hs-form input.hs-button.primary[type="submit"] {
+  margin-left: 60px !important; /* move 10px to the left */
+}
+.full-screen-hero form.hs-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.full-screen-hero form.hs-form .input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.full-screen-hero form.hs-form input,
+.full-screen-hero form.hs-form textarea,
+.full-screen-hero form.hs-form select {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+/* Form Label */
+.form-container label {
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.25px;
+/*   border:2px solid red; */
+}
+
+/* HubSpot Submit Button */
+.full-screen-hero form.hs-form input.hs-button.primary {
+  width: clamp(120px, 20vw, 170px);
+  height: clamp(32px, 6vw, 38px);
+  font-size: clamp(13px, 2.2vw, 16px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 40px;
+  background-color: #D9B55C;
+  color: #282828;
+  border: 2px solid #D9B55C; 
+  cursor: pointer;
+}
+
+.onSmallScreens {
+  display: none;
+}
+.onBigScreens {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/*  Media Queries */
+
+@media (max-width: 1024px) {
+  .overlay-heading {
+    font-size: 28px;
+    max-width: 85vw;
+  }
+  .overlay-description {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .overlay-button {
+    width: 140px;
+    height: 36px;
+    font-size: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  }
+  .overlay-button {
+}
+  .form-container {
+    max-width: 90%;
+     padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+    margin-top: 60px !important;
+  }
+  .hero-video {
+    width: 120%;
+    margin: 0 auto; 
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay-content {
+    top: 5%;
+    left: 50%;
+    padding: 0 10px;
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-video {
+    margin-top: 150px;
+    width: 130%;                 /* Make video wider */
+    transform: translateX(-10%);
+  }
+  .overlay-heading {
+    font-size: 32px;
+    margin-bottom: 10px;
+/*     border:2px solid red; */
+    padding-top:-20px;
+  }
+  .overlay-description {
+   font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+/*     border:2px solid red; */
+  }
+  .overlay-logo {
+    margin: 0 auto;
+  }
+  
+ .form-container {
+    padding-left: 40px;
+    padding-right: 20px;
+    margin-top:-100px;
+   margin: 20px auto 30px;
+  }
+  .onSmallScreens {
+    display: block;
+  }
+  .onBigScreens {
+    display: none;
+  }
+   .overlay-button {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+     margin-top:-40px;
+/*      border:2px solid red; */
+  }
+  .overlay-heading{
+    color: #FFFFFF;
+  }
+  .overlay-description{
+    color: #FFFFFF;
+  }
+/*    .hs-form { 
+    margin-top: -20px; 
+  } */
+}
+
+@media (max-width: 480px) {
+  .overlay-heading {
+    font-size: 28px;
+    padding-top:-20px;
+  }
+  .overlay-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .overlay-button {
+    padding: 8px 18px;
+    font-size: 15px;
+     margin-top:-35px;
+/*     border:2px solid red */
+  }
+  .overlay-logo {
+    max-width: 180px;
+    max-height: 50px;
+  }
+  .form-container {
+    padding-left: 20px;
+    padding-right: 15px;
+    margin-top:-100px;
+    margin: 15px auto 20px;
+  }
+  .full-screen-hero form.hs-form input.hs-button.primary {
+    width: 100% !important;
+    height: 55px !important;
+    font-size: 14px !important;
+  }
+}
+.full-screen-hero form.hs-form {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.my-button {
+  transform: translateX(-10px); /* Move left by 10px */
+} 
