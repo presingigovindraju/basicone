@@ -974,50 +974,54 @@ function selectOption(li) {
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
-  padding: 12px 0;
+  padding: 16px 0;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 ">
- 
+
   <!-- Label -->
-<label for="mobileSelect" style="
+  <label for="mobileSelect" style="
     font-size: 16px;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 4px;
+    color: #222;
   ">
     Choose an option
-</label>
- 
+  </label>
+
   <!-- Select -->
-<div style="position: relative; width: 100%;">
-<select id="mobileSelect" style="
+  <div style="position: relative; width: 100%;">
+    <select id="mobileSelect" style="
       width: 100%;
-      padding: 12px 16px;
+      padding: 14px 16px;
       font-size: 16px; /* prevents iOS zoom */
       font-family: 'Montserrat', sans-serif;
       border: 1.5px solid #007BFF;
-      border-radius: 8px;
+      border-radius: 10px;
       background-color: #fff;
       color: #333;
-      appearance: none; 
+      appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
       box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
       background-image: url('data:image/svg+xml;utf8,<svg fill=\'%23007BFF\' height=\'20\' viewBox=\'0 0 24 24\' width=\'20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
       background-repeat: no-repeat;
       background-position: right 14px center;
       background-size: 18px;
-    ">
-<option value="">Select an option</option>
-<option value="1">Option One</option>
-<option value="2">Option Two</option>
-<option value="3">Option Three</option>
-</select>
+    "
+    onfocus="this.style.boxShadow='0 0 0 3px rgba(0,123,255,0.25)'"
+    onblur="this.style.boxShadow='none'">
+      <option value="">Select an option</option>
+      <option value="1">Option One</option>
+      <option value="2">Option Two</option>
+      <option value="3">Option Three</option>
+    </select>
+  </div>
 </div>
-</div>
+
 
 
 
