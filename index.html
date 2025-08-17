@@ -970,6 +970,9 @@ function selectOption(li) {
 
 
 
+<!-- Font Awesome for arrow icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <div style="
   width: 100%;
   max-width: 420px;
@@ -993,10 +996,10 @@ function selectOption(li) {
   <div style="position: relative; width: 100%;">
     <button onclick="toggleDropdown(this)" style="
       width: 100%;
-      padding: 14px 16px;
+      padding: 16px 16px; /* increased height */
       font-size: 16px;
       font-family: 'Montserrat', sans-serif;
-      border: 1.5px solid #007BFF;
+      border: 1.5px solid #000; /* black border */
       border-radius: 10px;
       background-color: #fff;
       color: #333;
@@ -1006,7 +1009,7 @@ function selectOption(li) {
       box-sizing: border-box;
     ">
       Select an option
-      <span style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 14px;">▼</span>
+      <i class="fa-solid fa-angle-down arrowSizing" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); font-size:16px;"></i>
     </button>
 
     <ul style="
@@ -1015,9 +1018,9 @@ function selectOption(li) {
       top: 100%;
       left: 0;
       width: 100%;
-      max-height: 200px;
+      max-height: 240px; /* increased dropdown height */
       overflow-y: auto;
-      border: 1.5px solid #007BFF;
+      border: 1.5px solid #000; /* black border */
       border-radius: 10px;
       background: #fff;
       list-style: none;
@@ -1026,9 +1029,9 @@ function selectOption(li) {
       z-index: 100;
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     ">
-      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option One</li>
-      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option Two</li>
-      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option Three</li>
+      <li onclick="selectOption(this)" style="padding: 14px 16px; cursor: pointer;">Option One</li>
+      <li onclick="selectOption(this)" style="padding: 14px 16px; cursor: pointer;">Option Two</li>
+      <li onclick="selectOption(this)" style="padding: 14px 16px; cursor: pointer;">Option Three</li>
     </ul>
   </div>
 </div>
@@ -1041,31 +1044,50 @@ function toggleDropdown(btn) {
   // close others
   allDropdowns.forEach(ul => {
     if (ul !== dropdown) ul.style.display = 'none';
-    const arrow = ul.previousElementSibling.querySelector("span");
-    if (arrow) arrow.textContent = "▼";
+    const arrow = ul.previousElementSibling.querySelector(".arrowSizing");
+    if (arrow) {
+      arrow.classList.remove("fa-angle-up");
+      arrow.classList.add("fa-angle-down");
+    }
   });
 
   // toggle this one
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-  const arrow = btn.querySelector("span");
-  arrow.textContent = dropdown.style.display === 'block' ? "▲" : "▼";
+  const arrow = btn.querySelector(".arrowSizing");
+  if (arrow) {
+    if (dropdown.style.display === 'block') {
+      arrow.classList.remove("fa-angle-down");
+      arrow.classList.add("fa-angle-up");
+    } else {
+      arrow.classList.remove("fa-angle-up");
+      arrow.classList.add("fa-angle-down");
+    }
+  }
 }
 
 function selectOption(li) {
   const btn = li.parentElement.previousElementSibling;
   btn.childNodes[0].textContent = li.textContent + " "; // update button label
   li.parentElement.style.display = 'none';
-  btn.querySelector("span").textContent = "▼"; // reset arrow
+  const arrow = btn.querySelector(".arrowSizing");
+  if (arrow) {
+    arrow.classList.remove("fa-angle-up");
+    arrow.classList.add("fa-angle-down");
+  }
 }
 
 // close dropdown if click outside
 document.addEventListener("click", function(e) {
   if (!e.target.closest("div[style*='position: relative']")) {
     document.querySelectorAll("ul").forEach(ul => ul.style.display = "none");
-    document.querySelectorAll("button span").forEach(span => span.textContent = "▼");
+    document.querySelectorAll(".arrowSizing").forEach(arrow => {
+      arrow.classList.remove("fa-angle-up");
+      arrow.classList.add("fa-angle-down");
+    });
   }
 });
 </script>
+
 
 
 
