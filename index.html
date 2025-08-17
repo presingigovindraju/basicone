@@ -871,13 +871,20 @@
         </div>
 
     </div> -->
-<div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
 
-    <!-- Color -->
+
+
+    <!-- mobile form completed-->
+<!-- <div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
+
+    
     <div style="margin-bottom:20px; position:relative;">
         <label style="display:block; font-weight:bold; margin-bottom:8px;">Color</label>
         <div style="width:100%; position:relative;">
-            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Color</button>
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left; position:relative; font-family:Arial, sans-serif;" onclick="toggleDropdown(this)">
+                Select Color 
+                <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px;">▼</span>
+            </button>
             <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Red</li>
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Blue</li>
@@ -886,11 +893,14 @@
         </div>
     </div>
 
-    <!-- Seat Size -->
+    
     <div style="margin-bottom:20px; position:relative;">
         <label style="display:block; font-weight:bold; margin-bottom:8px;">Seat Size</label>
         <div style="width:100%; position:relative;">
-            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Seat Size</button>
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left; position:relative; font-family:Arial, sans-serif;" onclick="toggleDropdown(this)">
+                Select Seat Size 
+                <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px;">▼</span>
+            </button>
             <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">16”</li>
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">18”</li>
@@ -899,11 +909,14 @@
         </div>
     </div>
 
-    <!-- Arm Style -->
+    
     <div style="margin-bottom:20px; position:relative;">
         <label style="display:block; font-weight:bold; margin-bottom:8px;">Arm Style</label>
         <div style="width:100%; position:relative;">
-            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Arm Style</button>
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left; position:relative; font-family:Arial, sans-serif;" onclick="toggleDropdown(this)">
+                Select Arm Style 
+                <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px;">▼</span>
+            </button>
             <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Desk</li>
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Full</li>
@@ -911,11 +924,14 @@
         </div>
     </div>
 
-    <!-- Front Rigging -->
+    
     <div style="margin-bottom:20px; position:relative;">
         <label style="display:block; font-weight:bold; margin-bottom:8px;">Front Rigging</label>
         <div style="width:100%; position:relative;">
-            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left;" onclick="toggleDropdown(this)">Select Front Rigging</button>
+            <button style="width:100%; padding:10px; border-radius:8px; border:2px solid #007BFF; text-align:left; position:relative; font-family:Arial, sans-serif;" onclick="toggleDropdown(this)">
+                Select Front Rigging 
+                <span style="position:absolute; right:12px; top:50%; transform:translateY(-50%); font-size:14px;">▼</span>
+            </button>
             <ul style="display:none; position:absolute; top:100%; left:0; width:100%; max-height:150px; overflow-y:auto; border:1px solid #007BFF; border-radius:8px; background:white; list-style:none; padding:0; margin:0; z-index:10;">
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Footrests</li>
                 <li style="padding:10px; cursor:pointer;" onclick="selectOption(this)">Legrests</li>
@@ -928,20 +944,80 @@
 <script>
 function toggleDropdown(btn) {
     const ul = btn.nextElementSibling;
-    // Close other dropdowns
+    
     document.querySelectorAll('ul').forEach(menu => {
         if(menu !== ul) menu.style.display = 'none';
     });
+
+    
+    document.querySelectorAll('button span').forEach(span => span.textContent = "▼");
+
+    
     ul.style.display = ul.style.display === 'block' ? 'none' : 'block';
+
+   
+    const arrow = btn.querySelector("span");
+    arrow.textContent = ul.style.display === 'block' ? "▲" : "▼";
 }
 
 function selectOption(li) {
     const btn = li.parentElement.previousElementSibling;
-    btn.textContent = li.textContent;
+    btn.childNodes[0].textContent = li.textContent + " "; 
     li.parentElement.style.display = 'none';
+    btn.querySelector("span").textContent = "▼";
 }
-</script>
+</script> -->
 
+
+
+<div style="
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 12px 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+">
+ 
+  <!-- Label -->
+<label for="mobileSelect" style="
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+  ">
+    Choose an option
+</label>
+ 
+  <!-- Select -->
+<div style="position: relative; width: 100%;">
+<select id="mobileSelect" style="
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px; /* prevents iOS zoom */
+      font-family: 'Montserrat', sans-serif;
+      border: 1.5px solid #007BFF;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #333;
+      appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      box-sizing: border-box;
+      background-image: url('data:image/svg+xml;utf8,<svg fill=\'%23007BFF\' height=\'20\' viewBox=\'0 0 24 24\' width=\'20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 18px;
+    ">
+<option value="">Select an option</option>
+<option value="1">Option One</option>
+<option value="2">Option Two</option>
+<option value="3">Option Three</option>
+</select>
+</div>
+</div>
 
 
 
