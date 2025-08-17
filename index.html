@@ -980,9 +980,8 @@ function selectOption(li) {
   flex-direction: column;
   gap: 10px;
 ">
-
   <!-- Label -->
-  <label for="mobileSelect" style="
+  <label style="
     font-size: 16px;
     font-weight: 600;
     color: #222;
@@ -990,37 +989,84 @@ function selectOption(li) {
     Choose an option
   </label>
 
-  <!-- Select -->
+  <!-- Custom Dropdown -->
   <div style="position: relative; width: 100%;">
-    <select id="mobileSelect" style="
+    <button onclick="toggleDropdown(this)" style="
       width: 100%;
       padding: 14px 16px;
-      font-size: 16px; /* prevents iOS zoom */
+      font-size: 16px;
       font-family: 'Montserrat', sans-serif;
       border: 1.5px solid #007BFF;
       border-radius: 10px;
       background-color: #fff;
       color: #333;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
       box-sizing: border-box;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      background-image: url('data:image/svg+xml;utf8,<svg fill=\'%23007BFF\' height=\'20\' viewBox=\'0 0 24 24\' width=\'20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>');
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 18px;
-    "
-    onfocus="this.style.boxShadow='0 0 0 3px rgba(0,123,255,0.25)'"
-    onblur="this.style.boxShadow='none'">
-      <option value="">Select an option</option>
-      <option value="1">Option One</option>
-      <option value="2">Option Two</option>
-      <option value="3">Option Three</option>
-    </select>
+    ">
+      Select an option
+      <span style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 14px;">▼</span>
+    </button>
+
+    <ul style="
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1.5px solid #007BFF;
+      border-radius: 10px;
+      background: #fff;
+      list-style: none;
+      margin: 6px 0 0;
+      padding: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    ">
+      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option One</li>
+      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option Two</li>
+      <li onclick="selectOption(this)" style="padding: 12px 16px; cursor: pointer;">Option Three</li>
+    </ul>
   </div>
 </div>
+
+<script>
+function toggleDropdown(btn) {
+  const dropdown = btn.nextElementSibling;
+  const allDropdowns = document.querySelectorAll('ul');
+
+  // close others
+  allDropdowns.forEach(ul => {
+    if (ul !== dropdown) ul.style.display = 'none';
+    const arrow = ul.previousElementSibling.querySelector("span");
+    if (arrow) arrow.textContent = "▼";
+  });
+
+  // toggle this one
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  const arrow = btn.querySelector("span");
+  arrow.textContent = dropdown.style.display === 'block' ? "▲" : "▼";
+}
+
+function selectOption(li) {
+  const btn = li.parentElement.previousElementSibling;
+  btn.childNodes[0].textContent = li.textContent + " "; // update button label
+  li.parentElement.style.display = 'none';
+  btn.querySelector("span").textContent = "▼"; // reset arrow
+}
+
+// close dropdown if click outside
+document.addEventListener("click", function(e) {
+  if (!e.target.closest("div[style*='position: relative']")) {
+    document.querySelectorAll("ul").forEach(ul => ul.style.display = "none");
+    document.querySelectorAll("button span").forEach(span => span.textContent = "▼");
+  }
+});
+</script>
+
 
 
 
