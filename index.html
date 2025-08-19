@@ -130,7 +130,7 @@
       
       <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
         <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
-          <img src="https://via.placeholder.com/150" 
+          <img src="./img/61rhXhHa2hL.jpg" 
                alt="Heel Strap 1" 
                style="width:100%; border-radius:6px; margin-bottom:10px;">
           <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 1</h3>
@@ -150,7 +150,7 @@
       
       <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
         <div style="border:1px solid #eee; border-radius:8px; padding:12px; box-sizing:border-box;">
-          <img src="https://via.placeholder.com/150" 
+          <img src="./img/61rhXhHa2hL.jpg" 
                alt="Heel Strap 2" 
                style="width:100%; border-radius:6px; margin-bottom:10px;">
           <h3 style="font-size:14px; font-weight:bold; color:#333; margin:0 0 5px;">Heel Strap 2</h3>
@@ -829,7 +829,7 @@
 
 
 
-<!-- 
+    <!-- 
     <div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
 
         
@@ -875,7 +875,7 @@
 
 
     <!-- mobile form completed-->
-<!-- <div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
+    <!-- <div style="font-family: Arial, sans-serif; background:white; padding:15px; max-width:480px; margin:auto;">
 
     
     <div style="margin-bottom:20px; position:relative;">
@@ -970,11 +970,11 @@ function selectOption(li) {
 
 
 
-<!-- Font Awesome for arrow icons -->
-<!-- Font Awesome for arrow icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Font Awesome for arrow icons -->
+    <!-- Font Awesome for arrow icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<div style="
+    <div style="
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
@@ -984,18 +984,18 @@ function selectOption(li) {
   flex-direction: column;
   gap: 10px;
 ">
-  <!-- Label -->
-  <label style="
+        
+        <label style="
     font-size: 16px;
     font-weight: 600;
     color: #222;
   ">
-    Choose an option
-  </label>
+            Choose an option
+        </label>
 
-  <!-- Custom Dropdown -->
-  <div style="position: relative; width: 100%;">
-    <button onclick="toggleDropdown(this)" style="
+        
+        <div style="position: relative; width: 100%;">
+            <button onclick="toggleDropdown(this)" style="
       width: 100%;
       padding: 16px 16px;
       font-size: 16px;
@@ -1009,11 +1009,12 @@ function selectOption(li) {
       position: relative;
       box-sizing: border-box;
     ">
-      Select an option
-      <i class="fa-solid fa-angle-down arrowSizing" style="position:absolute; right:14px; top:50%; transform:translateY(-50%); font-size:16px;"></i>
-    </button>
+                Select an option
+                <i class="fa-solid fa-angle-down arrowSizing"
+                    style="position:absolute; right:14px; top:50%; transform:translateY(-50%); font-size:16px;"></i>
+            </button>
 
-    <ul style="
+            <ul style="
       display: none;
       position: absolute;
       top: 100%;
@@ -1030,66 +1031,226 @@ function selectOption(li) {
       z-index: 100;
       box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     ">
-      <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option One</li>
-      <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option Two</li>
-      <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option Three</li>
-    </ul>
-  </div>
-</div>
+                <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option One</li>
+                <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option Two</li>
+                <li onclick="selectOption(this)" style="padding: 16px 18px; cursor: pointer;">Option Three</li>
+            </ul>
+        </div>
+    </div>
 
-<script>
-function toggleDropdown(btn) {
-  const dropdown = btn.nextElementSibling;
-  const allDropdowns = document.querySelectorAll('ul');
+    <script>
+        function toggleDropdown(btn) {
+            const dropdown = btn.nextElementSibling;
+            const allDropdowns = document.querySelectorAll('ul');
 
-  // close others
-  allDropdowns.forEach(ul => {
-    if (ul !== dropdown) ul.style.display = 'none';
-    const arrow = ul.previousElementSibling.querySelector(".arrowSizing");
-    if (arrow) {
-      arrow.classList.remove("fa-angle-up");
-      arrow.classList.add("fa-angle-down");
-    }
-  });
+            
+            allDropdowns.forEach(ul => {
+                if (ul !== dropdown) ul.style.display = 'none';
+                const arrow = ul.previousElementSibling.querySelector(".arrowSizing");
+                if (arrow) {
+                    arrow.classList.remove("fa-angle-up");
+                    arrow.classList.add("fa-angle-down");
+                }
+            });
 
-  // toggle this one
-  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-  const arrow = btn.querySelector(".arrowSizing");
-  if (arrow) {
-    if (dropdown.style.display === 'block') {
-      arrow.classList.remove("fa-angle-down");
-      arrow.classList.add("fa-angle-up");
-    } else {
-      arrow.classList.remove("fa-angle-up");
-      arrow.classList.add("fa-angle-down");
-    }
-  }
-}
+            
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            const arrow = btn.querySelector(".arrowSizing");
+            if (arrow) {
+                if (dropdown.style.display === 'block') {
+                    arrow.classList.remove("fa-angle-down");
+                    arrow.classList.add("fa-angle-up");
+                } else {
+                    arrow.classList.remove("fa-angle-up");
+                    arrow.classList.add("fa-angle-down");
+                }
+            }
+        }
 
-function selectOption(li) {
-  const btn = li.parentElement.previousElementSibling;
-  btn.childNodes[0].textContent = li.textContent + " "; // update button label
-  li.parentElement.style.display = 'none';
-  const arrow = btn.querySelector(".arrowSizing");
-  if (arrow) {
-    arrow.classList.remove("fa-angle-up");
-    arrow.classList.add("fa-angle-down");
-  }
-}
+        function selectOption(li) {
+            const btn = li.parentElement.previousElementSibling;
+            btn.childNodes[0].textContent = li.textContent + " "; 
+            li.parentElement.style.display = 'none';
+            const arrow = btn.querySelector(".arrowSizing");
+            if (arrow) {
+                arrow.classList.remove("fa-angle-up");
+                arrow.classList.add("fa-angle-down");
+            }
+        }
 
-// close dropdown if click outside
-document.addEventListener("click", function(e) {
-  if (!e.target.closest("div[style*='position: relative']")) {
-    document.querySelectorAll("ul").forEach(ul => ul.style.display = "none");
-    document.querySelectorAll(".arrowSizing").forEach(arrow => {
-      arrow.classList.remove("fa-angle-up");
-      arrow.classList.add("fa-angle-down");
-    });
-  }
-});
-</script>
+        
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest("div[style*='position: relative']")) {
+                document.querySelectorAll("ul").forEach(ul => ul.style.display = "none");
+                document.querySelectorAll(".arrowSizing").forEach(arrow => {
+                    arrow.classList.remove("fa-angle-up");
+                    arrow.classList.add("fa-angle-down");
+                });
+            }
+        });
+    </script> -->
 
-
+    <div style="font-family: Arial, sans-serif;">
+    <div id="carousel" style="display:flex; align-items:center; justify-content:center; max-width:100%; margin:auto;">
+ 
+ 
+        <div id="next"
+            style="cursor:pointer; font-size:26px; font-weight:200; color:#0070f3; user-select:none; padding:10px;">
+            &#10094;
+        </div>
+ 
+ 
+        <div style="overflow:hidden; width:80%;">
+            <div id="slides" style="display:flex; transition:transform 0.4s ease;">
+ 
+ 
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+ 
+ 
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+ 
+ 
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:700; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:6px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+ 
+ 
+                <div
+                    style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box; font-family: Arial, sans-serif;">
+                    <div
+                        style="border:1.5px solid lightgray; border-radius:8px;  box-sizing:border-box; display: flex; flex-direction: column; align-items: center; justify-content: stretch; overflow: hidden;">
+                        <img src="./img/61rhXhHa2hL.jpg" alt="Heel Strap 1"
+                            style="width:100%;  border-bottom: 1px solid lightgrey;">
+                        <h3
+                            style="font-size:14px; font-weight:bold; color:#333333; margin:0 0 5px; width: 90%; margin-top: 5px;">
+                            Heel Strap</h3>
+                        <p style="font-size:12px; color:#666; margin:0 0 2.5px; width: 90%;">Item #STDS831</p>
+                        <p style="font-size:16px; font-weight:800; color:#0070f3; margin:0 0 4px; width: 90%;">$262.23
+                        </p>
+                        <div
+                            style="display:flex; width: 50%; align-items:center; justify-content: space-around; border:1.5px solid lightgray; border-radius:6px; padding:5px 10px; overflow: hidden; margin: 5px 0;">
+                            <label style="font-size:10px; font-weight:200; color:#333; ">
+                                Quantity:
+                            </label>
+                            <input type="number" value="1" min="1"
+                                style="width:30px; border:none; font-size:10px; text-align:center; outline:none; width: 30px;" />
+                        </div>
+                        <button
+                            style="background:#0070f3; color:#fff;width: 65%; border:none; padding:8px 14px; font-size:11px; border-radius:18px; cursor:pointer; margin: 7px 0;">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+ 
+ 
+        <div id="prev"
+            style="cursor:pointer; font-size:26px; font-weight:200; color:#0070f3; user-select:none; padding:10px;">
+            &#10095;
+        </div>
+ 
+ 
+    </div>
+    <div style="text-align:center; margin-top:15px;">
+        <a href="#"
+            style="font-size:14px; font-weight:400; color:#0070f3; text-decoration:none;  padding:6px 14px; border-radius:20px; display:inline-block; transition:all 0.3s;">
+            View All Accessories
+        </a>
+    </div>
+    </div>
+ 
+    <script>
+        const slides = document.getElementById("slides");
+        const total = slides.children.length;
+        let index = 0;
+ 
+        function showSlide(i) {
+            index = i;
+            if (index < 0) index = 0;
+            if (index > total - 2) index = total - 2;
+            slides.style.transform = `translateX(${-index * 50}%)`;
+        }
+ 
+        document.getElementById("prev").addEventListener("click", () => showSlide(index - 2));
+        document.getElementById("next").addEventListener("click", () => showSlide(index + 2));
+ 
+        showSlide(0);
+    </script>
 
 
 
