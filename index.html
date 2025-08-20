@@ -14,6 +14,76 @@
         type="image/x-icon">
     <title>Login | Drive Medical US Site</title>
 </head>
+     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      height: 100vh; /* full viewport height */
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: fixed; /* stays in place */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill viewport nicely */
+      z-index: -1; /* push video behind content */
+    }
+
+    .overlay-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.4); /* subtle overlay */
+      padding: 2rem;
+    }
+
+    .overlay-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .overlay-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #ff5722;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* SCROLLING SECTIONS */
+    .next-section {
+      height: 100vh;
+      padding: 3rem;
+      background: white;
+    }
+
+    .next-section:nth-child(even) {
+      background: #f4f4f4;
+    }
+  </style>
 
 <body>
 
@@ -1090,7 +1160,8 @@ function selectOption(li) {
         });
     </script> -->
 
-    <div style="font-family: Arial, sans-serif;">
+    <!-- heel strap -->
+    <!-- <div style="font-family: Arial, sans-serif;">
   <div id="carousel" style="display:flex; align-items:center; justify-content:center; max-width:100%; margin:auto;">
 
     <div id="next"
@@ -1101,7 +1172,7 @@ function selectOption(li) {
     <div style="overflow:hidden; width:80%;">
       <div id="slides" style="display:flex; transition:transform 0.4s ease;">
 
-        <!-- Card 1 -->
+        
         <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
           <div
             style="border:1.5px solid lightgray; border-radius:8px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; overflow:hidden;">
@@ -1126,7 +1197,7 @@ function selectOption(li) {
           </div>
         </div>
 
-        <!-- Card 2 -->
+        
         <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
           <div
             style="border:1.5px solid lightgray; border-radius:8px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; overflow:hidden;">
@@ -1148,7 +1219,7 @@ function selectOption(li) {
           </div>
         </div>
 
-        <!-- Card 3 -->
+        
         <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
           <div
             style="border:1.5px solid lightgray; border-radius:8px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; overflow:hidden;">
@@ -1170,7 +1241,7 @@ function selectOption(li) {
           </div>
         </div>
 
-        <!-- Card 4 -->
+       
         <div style="flex:0 0 50%; max-width:50%; padding:10px; box-sizing:border-box;">
           <div
             style="border:1.5px solid lightgray; border-radius:8px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; overflow:hidden;">
@@ -1209,7 +1280,7 @@ function selectOption(li) {
   </div>
 </div>
 
-<!-- Slider JS -->
+
 <script>
   const slides = document.getElementById("slides");
   const total = slides.children.length;
@@ -1226,10 +1297,10 @@ function selectOption(li) {
   document.getElementById("next").addEventListener("click", () => showSlide(index + 2));
 
   showSlide(0);
-</script>
+</script> -->
 
 <!-- CSS for product title -->
-<style>
+<!-- <style>
   .product-title {
     font-size: 14px;
     font-weight: bold;
@@ -1238,16 +1309,39 @@ function selectOption(li) {
     width: 90%;
     margin-top: 5px;
 
-    white-space: nowrap;       /* keep text in one line */
-    overflow: hidden;          /* hide overflow text */
-    text-overflow: ellipsis;   /* show "..." */
+    white-space: nowrap;       
+    overflow: hidden;        
+    text-overflow: ellipsis;   
     display: block;
-    max-width: 14ch;           /* show ~14 characters */
+    max-width: 14ch;           
   }
-</style>
+</style> -->
 
 
+     <section class="hero-section">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="./video/air cane foot hightliht.loop_fade.mp4" type="video/mp4" />
+    </video>
+    
+  </section>
 
+  <section class="next-section">
+    <div class="overlay-content">
+      <h1>Something Bold is Coming</h1>
+      <p>Get first-look access and your exclusive offer</p>
+      <a class="overlay-button" href="#hubspot-form">Sign Up Now</a>
+    </div>
+  </section>
+
+  <section class="next-section">
+    <div class="overlay-content">
+      <div class="overlay-content">
+  <h1>Welcome to HubSpot</h1>
+  <p>Open doors for a soulful experience</p>
+  <a class="overlay-button" href="#hubspot-form">Sign Up Now</a>
+</div>
+    </div>
+  </section>
 
 
 
